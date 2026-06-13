@@ -82,7 +82,7 @@
       </div>
 
       <!-- Bagian Form -->
-      <div class="p-6 sm:p-8 md:p-10 lg:p-12">
+      <div id="formSection" class="p-6 sm:p-8 md:p-10 lg:p-12">
         <form id="izinForm" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <!-- Input Nama -->
           <div>
@@ -307,9 +307,25 @@
         </form>
         <br />
         <br />
-
-        <p>&copy;2026METAHATI</p>
       </div>
+      <div
+        id="successSection"
+        class="hidden rounded-xl border border-green-200 bg-[#EAF7EC] p-6 text-center shadow-sm"
+      >
+        <h2 class="text-xl font-bold text-[#0D7A43]">
+          Permohonan Izin Berhasil Terkirim
+        </h2>
+        <p class="mt-2 text-sm text-[#0F5132]">
+          Data perizinan Anda sudah masuk ke sistem. Tunggu persetujuan dari
+          TIMDIS <br />
+          Terima kasih.
+        </p>
+      </div>
+      <p
+        class="flex-1 px-4 py-2 block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+      >
+        &copy;2026METAHATI
+      </p>
     </div>
 
     <script>
@@ -358,6 +374,8 @@
           const btnText = submitBtn.querySelector("span");
           const loadingIcon = document.getElementById("loadingIcon");
           const statusMessage = document.getElementById("statusMessage");
+          const formSection = document.getElementById("formSection");
+          const successSection = document.getElementById("successSection");
 
           // Mengubah status tombol
           submitBtn.disabled = true;
@@ -443,11 +461,10 @@
             const result = await response.json();
 
             if (result.status === "success") {
-              showStatus(
-                "success",
-                "Berhasil! Permohonan izin Anda telah terkirim.",
-              );
               document.getElementById("izinForm").reset();
+              formSection.classList.add("hidden");
+              successSection.classList.remove("hidden");
+
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",
