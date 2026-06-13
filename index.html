@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Izin Kuliah Mahasiswa</title>
+
+    <!-- Tailwind CSS untuk styling -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Google: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="LOGO-MAHAD-ALY.png" type="image/x-icon" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        /* Hijau muda yang sangat lembut */
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-[#F4FAF5] dark:bg-[#0F172A] flex items-center justify-center p-4 md:p-8 transition-all duration-300"
+  >
+    <div
+      id="mainCard"
+      class="relative bg-white dark:bg-gray-800 w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden border border-[#7CC04B]/30 dark:border-gray-700"
+    >
+      <button
+        type="button"
+        id="themeToggle"
+        class="absolute top-4 right-4 bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 text-gray-700 dark:text-white rounded-full p-2 outline-none transition-all duration-200"
+        title="Ubah Tema"
+      >
+        <svg
+          id="themeToggleSun"
+          class="hidden w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.05a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm-.707-9.9a1 1 0 011.414 0l.707.707a1 1 0 11-1.414 1.414l-.707-.707a1 1 0 010-1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"
+          ></path>
+        </svg>
+        <svg
+          id="themeToggleMoon"
+          class="hidden w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M17.293 13.293A8 8 0 116.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+      </button>
+      <!-- Bagian Header (Kop Form) -->
+      <div
+        class="bg-gradient-to-r from-[#0D7A43] via-[#4FAE3B] to-[#7CC04B] px-6 py-10 md:py-12 text-center text-white flex flex-col items-center"
+      >
+        <!-- PLACEHOLDER LOGO -->
+        <div class="mb-4">
+          <img
+            src="LOGO-MAHAD-ALY.png"
+            alt="Logo Ma'had Aly Amtsilati"
+            class="w-40 md:w-52 mx-auto drop-shadow-lg"
+          />
+        </div>
+        <h1 class="text-3xl font-bold tracking-wide">FORM IZIN MAHASANTRI</h1>
+
+        <p class="text-white/90 text-sm mt-2">
+          Ma'had Aly Amtsilati • Program Studi Bahasa dan Sastra Arab
+        </p>
+      </div>
+
+      <!-- Bagian Form -->
+      <div class="p-6 sm:p-8 md:p-10 lg:p-12">
+        <form id="izinForm" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Input Nama -->
+          <div>
+            <label
+              for="nama"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="nama"
+              required
+              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#4FAE3B] focus:shadow-md focus:border-[#0D7A43] outline-none transition-all bg-gray-50 dark:bg-gray-700 hover:border-green-400 dark:text-white"
+              placeholder="Masukkan nama lengkap"
+            />
+          </div>
+
+          <!-- Kelas & No HP (Grid) kasih option grup -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="kelas"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+                >Kelas</label
+              >
+
+              <select
+                name="kelas"
+                id="kelas"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#4FAE3B] focus:shadow-md focus:border-[#0D7A43] outline-none transition-all bg-gray-50 dark:bg-gray-700 dark:text-white"
+              >
+                <option value="" disabled selected>Pilih...</option>
+                <option value="1A">1A</option>
+                <option value="1B">1B</option>
+                <option value="2A">2A</option>
+                <option value="2B">2B</option>
+                <option value="3A">3A</option>
+                <option value="3B">3B</option>
+                <option value="4A">4A</option>
+                <option value="4B">4B</option>
+                <option value="5A">5A</option>
+                <option value="5B">5B</option>
+                <option value="6A">6A</option>
+                <option value="6B">6B</option>
+                <option value="7A">7A</option>
+                <option value="7B">7B</option>
+                <option value="8A">8A</option>
+                <option value="8B">8B</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="nohp"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+                >No. WhatsApp</label
+              >
+              <input
+                type="tel"
+                id="nohp"
+                required
+                pattern="[0-9]{10,15}"
+                class="w-full px-4 py-2 border border-gray-300 hover:border-green-400 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#4FAE3B] focus:border-[#0D7A43] outline-none transition-all bg-gray-50 dark:bg-gray-700 dark:text-white"
+                placeholder="08xx"
+              />
+            </div>
+          </div>
+
+          <!-- Jenis Izin & Jam Mata Kuliah (Grid) -->
+          <!-- Jenis Izin -->
+          <div>
+            <label
+              for="jenisIzin"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+            >
+              Jenis Izin
+            </label>
+
+            <select
+              id="jenisIzin"
+              required
+              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#4FAE3B] focus:shadow-md focus:border-[#0D7A43] outline-none transition-all bg-gray-50 dark:bg-gray-700 dark:text-white"
+            >
+              <option value="" disabled selected>Pilih...</option>
+              <option value="Sakit">Sakit</option>
+              <option value="Pulang">Pulang</option>
+              <option value="Kerja Bakti">Kerja Bakti</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <!-- Jam Mata Kuliah -->
+          <div class="md:col-span-2">
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3"
+            >
+              Pilih Jam Mata Kuliah
+            </label>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              <label
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+              >
+                <input
+                  type="checkbox"
+                  name="jamMakul"
+                  value="Jam Ke-1"
+                  class="accent-green-600 w-4 h-4"
+                />
+                <span class="dark:text-white text-sm font-medium"
+                  >Jam Ke-1</span
+                >
+              </label>
+
+              <label
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+              >
+                <input
+                  type="checkbox"
+                  name="jamMakul"
+                  value="Jam Ke-2"
+                  class="accent-green-600 w-4 h-4"
+                />
+                <span class="dark:text-white text-sm font-medium"
+                  >Jam Ke-2</span
+                >
+              </label>
+
+              <label
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+              >
+                <input
+                  type="checkbox"
+                  name="jamMakul"
+                  value="Jam Ke-3"
+                  class="accent-green-600 w-4 h-4"
+                />
+                <span class="dark:text-white text-sm font-medium"
+                  >Jam Ke-3</span
+                >
+              </label>
+
+              <label
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+              >
+                <input
+                  type="checkbox"
+                  name="jamMakul"
+                  value="Jam Ke-4"
+                  class="accent-green-600 w-4 h-4"
+                />
+                <span class="dark:text-white text-sm font-medium"
+                  >Jam Ke-4</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <!-- Input Keterangan/Alasan -->
+          <div class="md:col-span-2">
+            <label
+              for="alasan"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+              >Alasan Detail</label
+            >
+            <textarea
+              id="alasan"
+              rows="2"
+              required
+              class="w-full px-4 py-2 border border-gray-300 hover:border-green-400 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#4FAE3B] focus:shadow-md focus:border-[#0D7A43] outline-none transition-all bg-gray-50 dark:bg-gray-700 dark:text-white"
+              placeholder="Jelaskan alasan/udzur Anda"
+            ></textarea>
+          </div>
+
+          <!-- Pesan Notifikasi -->
+          <div
+            id="statusMessage"
+            class="md:col-span-2 hidden rounded-lg p-3 text-sm font-medium text-center"
+          ></div>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            style="display: none"
+          />
+
+          <div class="md:col-span-2">
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+            >
+              Verifikasi Anti Bot
+            </label>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div
+                class="sm:w-48 flex items-center justify-center bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg font-bold text-xl px-4 py-2"
+              >
+                <span id="captchaQuestion"></span>
+              </div>
+
+              <input
+                type="number"
+                id="captchaAnswer"
+                placeholder="Jawaban"
+                class="flex-1 px-4 py-2 border border-gray-300 hover:border-green-400 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:shadow-md focus:border-green-500 outline-none transition-all bg-gray-50 dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+          </div>
+          <!-- Tombol Kirim -->
+          <button
+            type="submit"
+            id="submitBtn"
+            class="md:col-span-2 w-full bg-[#0D7A43] hover:bg-[#096538] text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 mt-4 shadow-lg"
+          >
+            <span>Kirim Permohonan Izin</span>
+
+            <div
+              id="loadingIcon"
+              class="hidden border-2 border-white/20 border-t-white rounded-full w-4 h-4 animate-spin"
+            ></div>
+          </button>
+        </form>
+        <br />
+        <br />
+
+        <p>&copy;2026METAHATI</p>
+      </div>
+    </div>
+
+    <script>
+      let captchaResult;
+      const angka1 = Math.floor(Math.random() * 10);
+
+      const angka2 = Math.floor(Math.random() * 10);
+
+      captchaResult = angka1 + angka2;
+
+      document.getElementById("captchaQuestion").textContent =
+        `${angka1} + ${angka2} = ?`;
+
+      // Logika Pengendali Dark Mode
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const themeToggleSun = document.getElementById("themeToggleSun");
+      const themeToggleMoon = document.getElementById("themeToggleMoon");
+
+      function updateToggleIcons() {
+        if (document.documentElement.classList.contains("dark")) {
+          themeToggleSun.classList.remove("hidden");
+          themeToggleMoon.classList.add("hidden");
+        } else {
+          themeToggleSun.classList.add("hidden");
+          themeToggleMoon.classList.remove("hidden");
+        }
+      }
+      updateToggleIcons();
+      // Jalankan saat pertama kali dimuat
+
+      themeToggleBtn.addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark");
+        if (document.documentElement.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+        updateToggleIcons();
+      });
+      document
+        .getElementById("izinForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const submitBtn = document.getElementById("submitBtn");
+          const btnText = submitBtn.querySelector("span");
+          const loadingIcon = document.getElementById("loadingIcon");
+          const statusMessage = document.getElementById("statusMessage");
+
+          // Mengubah status tombol
+          submitBtn.disabled = true;
+          if (typeof anime !== "undefined") {
+            anime({
+              targets: "#submitBtn",
+              scale: [
+                { value: 0.95, duration: 120 },
+                { value: 1, duration: 400 },
+              ],
+              easing: "easeOutElastic(1, .6)",
+            });
+          }
+          submitBtn.classList.add("opacity-70");
+          submitBtn.classList.remove("opacity-70");
+          btnText.textContent = "Mengirim...";
+          loadingIcon.classList.remove("hidden");
+          statusMessage.classList.add("hidden");
+
+          try {
+            const selectedJam = Array.from(
+              document.querySelectorAll('input[name="jamMakul"]:checked'),
+            );
+
+            if (selectedJam.length === 0) {
+              showStatus("error", "Pilih minimal satu jam mata kuliah.");
+              resetButton();
+              return;
+            }
+
+            const nohp = document.getElementById("nohp").value.trim();
+
+            const regexNoHP = /^(08|628)[0-9]{8,13}$/;
+
+            if (!regexNoHP.test(nohp)) {
+              showStatus("error", "Nomor WhatsApp tidak valid");
+
+              resetButton();
+              return;
+            }
+
+            if (document.getElementById("website").value !== "") {
+              showStatus("error", "Spam terdeteksi");
+
+              resetButton();
+              return;
+            }
+
+            const jawaban = Number(
+              document.getElementById("captchaAnswer").value,
+            );
+
+            if (jawaban !== captchaResult) {
+              showStatus("error", "Jawaban verifikasi salah");
+
+              resetButton();
+              return;
+            }
+            const payload = {
+              apiKey: "AMTSILATI_2026_METAHATI",
+              nama: document.getElementById("nama").value,
+              kelas: document.getElementById("kelas").value,
+              nohp: document.getElementById("nohp").value,
+              jenisIzin: document.getElementById("jenisIzin").value,
+              jamMakul: selectedJam.map((el) => el.value).join(", "),
+              alasan: document.getElementById("alasan").value,
+              status: "Menunggu Persetujuan",
+            };
+
+            console.log("Data siap dikirim, memproses...");
+
+            // =====================================================================
+            // PENTING: GANTI TULISAN DI BAWAH INI DENGAN URL WEB APP GOOGLE ANDA
+            // =====================================================================
+            const scriptURL =
+              "https://script.google.com/macros/s/AKfycbzp5d3JxPVg0jq1UN6Y-Pc15kBte5_bUIL5oHpkevOLLTJAtWpDKGi0qQe1WKMuQnMV/exec";
+
+            const response = await fetch(scriptURL, {
+              method: "POST",
+              body: JSON.stringify(payload),
+            });
+
+            const result = await response.json();
+
+            if (result.status === "success") {
+              showStatus(
+                "success",
+                "Berhasil! Permohonan izin Anda telah terkirim.",
+              );
+              document.getElementById("izinForm").reset();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            } else {
+              showStatus("error", "Gagal: " + result.message);
+            }
+
+            resetButton();
+          } catch (error) {
+            showStatus("error", "Terjadi kesalahan sistem: " + error.message);
+            resetButton();
+          }
+
+          function resetButton() {
+            submitBtn.disabled = false;
+            submitBtn.classList.add("opacity-70");
+            submitBtn.classList.remove("opacity-70");
+            btnText.textContent = "Kirim Permohonan Izin";
+            loadingIcon.classList.add("hidden");
+          }
+
+          function showStatus(type, message) {
+            statusMessage.textContent = message;
+            statusMessage.classList.remove(
+              "hidden",
+              "bg-green-100",
+              "text-green-700",
+              "bg-red-100",
+              "text-red-700",
+            );
+            if (type === "success") {
+              statusMessage.classList.add("bg-[#EAF7EC]", "text-[#0D7A43]");
+            } else {
+              statusMessage.classList.add("bg-red-100", "text-red-700");
+            }
+            anime({
+              targets: "#statusMessage",
+              opacity: [0, 1],
+              translateY: [-15, 0],
+              duration: 700,
+              easing: "easeOutExpo",
+            });
+          }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        anime({
+          targets: "#mainCard",
+          opacity: [0, 1],
+          translateY: [40, 0],
+          scale: [0.95, 1],
+          duration: 1200,
+          easing: "easeOutExpo",
+        });
+      });
+    </script>
+  </body>
+</html>
