@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Izin Kuliah Mahasiswa</title>
 
-    <!-- Tailwind CSS untuk styling -->
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -13,7 +12,6 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Google: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,16 +22,15 @@
     <style>
       body {
         font-family: "Poppins", sans-serif;
-        /* Hijau muda yang sangat lembut */
       }
     </style>
   </head>
   <body
-    class="min-h-screen bg-[#F4FAF5] dark:bg-[#0F172A] flex items-center justify-center p-4 md:p-8 transition-all duration-300"
+    class="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center p-4 md:p-8 transition-all duration-300"
   >
     <div
       id="mainCard"
-      class="relative bg-white dark:bg-gray-800 w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden border border-[#7CC04B]/30 dark:border-gray-700"
+      class="relative bg-white dark:bg-gray-800 w-full max-w-4xl rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700"
     >
       <button
         type="button"
@@ -62,11 +59,10 @@
           ></path>
         </svg>
       </button>
-      <!-- Bagian Header (Kop Form) -->
+
       <div
         class="bg-gradient-to-r from-[#0D7A43] via-[#4FAE3B] to-[#7CC04B] px-6 py-10 md:py-12 text-center text-white flex flex-col items-center"
       >
-        <!-- PLACEHOLDER LOGO -->
         <div class="mb-4">
           <img
             src="LOGO-MAHAD-ALY.png"
@@ -75,16 +71,13 @@
           />
         </div>
         <h1 class="text-3xl font-bold tracking-wide">FORM IZIN MAHASANTRI</h1>
-
         <p class="text-white/90 text-sm mt-2">
-          Ma'had Aly Amtsilati • Takhossus Bahasa dan Sastra Arab
+          Ma'had Aly Amtsilati &bull; Takhossus Bahasa dan Sastra Arab
         </p>
       </div>
 
-      <!-- Bagian Form -->
       <div id="formSection" class="p-6 sm:p-8 md:p-10 lg:p-12">
         <form id="izinForm" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- Input Nama -->
           <div>
             <label
               for="nama"
@@ -100,7 +93,6 @@
             />
           </div>
 
-          <!-- Kelas & No HP (Grid) kasih option grup -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label
@@ -108,7 +100,6 @@
                 class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
                 >Kelas</label
               >
-
               <select
                 name="kelas"
                 id="kelas"
@@ -151,8 +142,6 @@
             </div>
           </div>
 
-          <!-- Jenis Izin & Jam Mata Kuliah (Grid) -->
-          <!-- Jenis Izin -->
           <div>
             <label
               for="jenisIzin"
@@ -160,7 +149,6 @@
             >
               Jenis Izin
             </label>
-
             <select
               id="jenisIzin"
               required
@@ -174,17 +162,15 @@
             </select>
           </div>
 
-          <!-- Jam Mata Kuliah -->
           <div class="md:col-span-2">
             <label
               class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-3"
             >
               Pilih Jam Mata Kuliah
             </label>
-
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               <label
-                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-white dark:hover:bg-gray-600 transition-all"
               >
                 <input
                   type="checkbox"
@@ -198,7 +184,7 @@
               </label>
 
               <label
-                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-white dark:hover:bg-gray-600 transition-all"
               >
                 <input
                   type="checkbox"
@@ -212,7 +198,7 @@
               </label>
 
               <label
-                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-white dark:hover:bg-gray-600 transition-all"
               >
                 <input
                   type="checkbox"
@@ -226,7 +212,7 @@
               </label>
 
               <label
-                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-600 transition-all"
+                class="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 cursor-pointer hover:border-green-500 hover:bg-white dark:hover:bg-gray-600 transition-all"
               >
                 <input
                   type="checkbox"
@@ -241,7 +227,6 @@
             </div>
           </div>
 
-          <!-- Input Keterangan/Alasan -->
           <div class="md:col-span-2">
             <label
               for="alasan"
@@ -257,11 +242,11 @@
             ></textarea>
           </div>
 
-          <!-- Pesan Notifikasi -->
           <div
             id="statusMessage"
             class="md:col-span-2 hidden rounded-lg p-3 text-sm font-medium text-center"
           ></div>
+
           <input
             type="text"
             id="website"
@@ -275,14 +260,12 @@
             >
               Verifikasi Anti Bot
             </label>
-
             <div class="flex flex-col sm:flex-row gap-3">
               <div
                 class="sm:w-48 flex items-center justify-center bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg font-bold text-xl px-4 py-2"
               >
                 <span id="captchaQuestion"></span>
               </div>
-
               <input
                 type="number"
                 id="captchaAnswer"
@@ -291,14 +274,13 @@
               />
             </div>
           </div>
-          <!-- Tombol Kirim -->
+
           <button
             type="submit"
             id="submitBtn"
             class="md:col-span-2 w-full bg-[#0D7A43] hover:bg-[#096538] text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 mt-4 shadow-lg"
           >
             <span>Kirim Permohonan Izin</span>
-
             <div
               id="loadingIcon"
               class="hidden border-2 border-white/20 border-t-white rounded-full w-4 h-4 animate-spin"
@@ -308,6 +290,7 @@
         <br />
         <br />
       </div>
+
       <div
         id="successSection"
         class="hidden rounded-xl border border-green-200 bg-[#EAF7EC] p-6 text-center shadow-sm"
@@ -321,6 +304,7 @@
           Terima kasih.
         </p>
       </div>
+
       <p
         class="flex-1 px-4 py-2 block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
       >
@@ -329,23 +313,44 @@
     </div>
 
     <script>
-      let captchaResult;
-      const angka1 = Math.floor(Math.random() * 10);
-
-      const angka2 = Math.floor(Math.random() * 10);
-
-      captchaResult = angka1 + angka2;
-
-      document.getElementById("captchaQuestion").textContent =
-        `${angka1} + ${angka2} = ?`;
-
-      // Logika Pengendali Dark Mode
+      const AUTO_REFRESH_INTERVAL = 15 * 60 * 1000;
+      const documentRoot = document.documentElement;
+      const form = document.getElementById("izinForm");
+      const captchaQuestion = document.getElementById("captchaQuestion");
+      const captchaAnswerInput = document.getElementById("captchaAnswer");
       const themeToggleBtn = document.getElementById("themeToggle");
       const themeToggleSun = document.getElementById("themeToggleSun");
       const themeToggleMoon = document.getElementById("themeToggleMoon");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      );
+      let captchaResult = 0;
+
+      function runAnime(options) {
+        if (typeof anime === "function") {
+          anime(options);
+        }
+      }
+
+      function generateCaptcha() {
+        const angka1 = Math.floor(Math.random() * 10);
+        const angka2 = Math.floor(Math.random() * 10);
+
+        captchaResult = angka1 + angka2;
+        captchaQuestion.textContent = `${angka1} + ${angka2} = ?`;
+        captchaAnswerInput.value = "";
+      }
+
+      function applySavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        const shouldUseDark =
+          savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches);
+
+        documentRoot.classList.toggle("dark", shouldUseDark);
+      }
 
       function updateToggleIcons() {
-        if (document.documentElement.classList.contains("dark")) {
+        if (documentRoot.classList.contains("dark")) {
           themeToggleSun.classList.remove("hidden");
           themeToggleMoon.classList.add("hidden");
         } else {
@@ -353,167 +358,191 @@
           themeToggleMoon.classList.remove("hidden");
         }
       }
+
+      function showStatus(type, message) {
+        const statusMessage = document.getElementById("statusMessage");
+
+        statusMessage.textContent = message;
+        statusMessage.classList.remove(
+          "hidden",
+          "bg-green-100",
+          "text-green-700",
+          "bg-red-100",
+          "text-red-700",
+          "bg-[#EAF7EC]",
+          "text-[#0D7A43]",
+        );
+
+        if (type === "success") {
+          statusMessage.classList.add("bg-[#EAF7EC]", "text-[#0D7A43]");
+        } else {
+          statusMessage.classList.add("bg-red-100", "text-red-700");
+        }
+
+        runAnime({
+          targets: "#statusMessage",
+          opacity: [0, 1],
+          translateY: [-15, 0],
+          duration: 700,
+          easing: "easeOutExpo",
+        });
+      }
+
+      function resetButton(submitBtn, btnText, loadingIcon) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
+        btnText.textContent = "Kirim Permohonan Izin";
+        loadingIcon.classList.add("hidden");
+      }
+
+      applySavedTheme();
       updateToggleIcons();
-      // Jalankan saat pertama kali dimuat
+      generateCaptcha();
 
       themeToggleBtn.addEventListener("click", function () {
-        document.documentElement.classList.toggle("dark");
-        if (document.documentElement.classList.contains("dark")) {
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
+        documentRoot.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          documentRoot.classList.contains("dark") ? "dark" : "light",
+        );
         updateToggleIcons();
       });
-      document
-        .getElementById("izinForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
 
-          const submitBtn = document.getElementById("submitBtn");
-          const btnText = submitBtn.querySelector("span");
-          const loadingIcon = document.getElementById("loadingIcon");
-          const statusMessage = document.getElementById("statusMessage");
-          const formSection = document.getElementById("formSection");
-          const successSection = document.getElementById("successSection");
+      prefersDarkScheme.addEventListener("change", function (event) {
+        if (!localStorage.getItem("theme")) {
+          documentRoot.classList.toggle("dark", event.matches);
+          updateToggleIcons();
+        }
+      });
 
-          // Mengubah status tombol
-          submitBtn.disabled = true;
-          if (typeof anime !== "undefined") {
-            anime({
-              targets: "#submitBtn",
-              scale: [
-                { value: 0.95, duration: 120 },
-                { value: 1, duration: 400 },
-              ],
-              easing: "easeOutElastic(1, .6)",
-            });
-          }
-          submitBtn.classList.add("opacity-70");
-          submitBtn.classList.remove("opacity-70");
-          btnText.textContent = "Mengirim...";
-          loadingIcon.classList.remove("hidden");
-          statusMessage.classList.add("hidden");
+      setTimeout(function () {
+        window.location.reload();
+      }, AUTO_REFRESH_INTERVAL);
 
-          try {
-            const selectedJam = Array.from(
-              document.querySelectorAll('input[name="jamMakul"]:checked'),
-            );
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-            if (selectedJam.length === 0) {
-              showStatus("error", "Pilih minimal satu jam mata kuliah.");
-              resetButton();
-              return;
-            }
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = submitBtn.querySelector("span");
+        const loadingIcon = document.getElementById("loadingIcon");
+        const statusMessage = document.getElementById("statusMessage");
+        const formSection = document.getElementById("formSection");
+        const successSection = document.getElementById("successSection");
 
-            const nohp = document.getElementById("nohp").value.trim();
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-70", "cursor-not-allowed");
+        btnText.textContent = "Mengirim...";
+        loadingIcon.classList.remove("hidden");
+        statusMessage.classList.add("hidden");
 
-            const regexNoHP = /^(08|628)[0-9]{8,13}$/;
-
-            if (!regexNoHP.test(nohp)) {
-              showStatus("error", "Nomor WhatsApp tidak valid");
-
-              resetButton();
-              return;
-            }
-
-            if (document.getElementById("website").value !== "") {
-              showStatus("error", "Spam terdeteksi");
-
-              resetButton();
-              return;
-            }
-
-            const jawaban = Number(
-              document.getElementById("captchaAnswer").value,
-            );
-
-            if (jawaban !== captchaResult) {
-              showStatus("error", "Jawaban verifikasi salah");
-
-              resetButton();
-              return;
-            }
-            const payload = {
-              apiKey: "AMTSILATI_2026_METAHATI",
-              nama: document.getElementById("nama").value,
-              kelas: document.getElementById("kelas").value,
-              nohp: document.getElementById("nohp").value,
-              jenisIzin: document.getElementById("jenisIzin").value,
-              jamMakul: selectedJam.map((el) => el.value).join(", "),
-              alasan: document.getElementById("alasan").value,
-              status: "Menunggu Persetujuan",
-            };
-
-            console.log("Data siap dikirim, memproses...");
-
-            // =====================================================================
-            // PENTING: GANTI TULISAN DI BAWAH INI DENGAN URL WEB APP GOOGLE ANDA
-            // =====================================================================
-            const scriptURL =
-              "https://script.google.com/macros/s/AKfycbzp5d3JxPVg0jq1UN6Y-Pc15kBte5_bUIL5oHpkevOLLTJAtWpDKGi0qQe1WKMuQnMV/exec";
-
-            const response = await fetch(scriptURL, {
-              method: "POST",
-              body: JSON.stringify(payload),
-            });
-
-            const result = await response.json();
-
-            if (result.status === "success") {
-              document.getElementById("izinForm").reset();
-              formSection.classList.add("hidden");
-              successSection.classList.remove("hidden");
-
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            } else {
-              showStatus("error", "Gagal: " + result.message);
-            }
-
-            resetButton();
-          } catch (error) {
-            showStatus("error", "Terjadi kesalahan sistem: " + error.message);
-            resetButton();
-          }
-
-          function resetButton() {
-            submitBtn.disabled = false;
-            submitBtn.classList.add("opacity-70");
-            submitBtn.classList.remove("opacity-70");
-            btnText.textContent = "Kirim Permohonan Izin";
-            loadingIcon.classList.add("hidden");
-          }
-
-          function showStatus(type, message) {
-            statusMessage.textContent = message;
-            statusMessage.classList.remove(
-              "hidden",
-              "bg-green-100",
-              "text-green-700",
-              "bg-red-100",
-              "text-red-700",
-            );
-            if (type === "success") {
-              statusMessage.classList.add("bg-[#EAF7EC]", "text-[#0D7A43]");
-            } else {
-              statusMessage.classList.add("bg-red-100", "text-red-700");
-            }
-            anime({
-              targets: "#statusMessage",
-              opacity: [0, 1],
-              translateY: [-15, 0],
-              duration: 700,
-              easing: "easeOutExpo",
-            });
-          }
+        runAnime({
+          targets: "#submitBtn",
+          scale: [
+            { value: 0.95, duration: 120 },
+            { value: 1, duration: 400 },
+          ],
+          easing: "easeOutElastic(1, .6)",
         });
+
+        try {
+          const selectedJam = Array.from(
+            document.querySelectorAll('input[name="jamMakul"]:checked'),
+          );
+
+          if (selectedJam.length === 0) {
+            showStatus("error", "Pilih minimal satu jam mata kuliah.");
+            generateCaptcha();
+            resetButton(submitBtn, btnText, loadingIcon);
+            return;
+          }
+
+          const nohp = document.getElementById("nohp").value.trim();
+          const regexNoHP = /^(08|628)[0-9]{8,13}$/;
+
+          if (!regexNoHP.test(nohp)) {
+            showStatus("error", "Nomor WhatsApp tidak valid");
+            generateCaptcha();
+            resetButton(submitBtn, btnText, loadingIcon);
+            return;
+          }
+
+          if (document.getElementById("website").value !== "") {
+            showStatus("error", "Spam terdeteksi");
+            generateCaptcha();
+            resetButton(submitBtn, btnText, loadingIcon);
+            return;
+          }
+
+          const jawaban = Number(captchaAnswerInput.value);
+
+          if (jawaban !== captchaResult) {
+            showStatus("error", "Jawaban verifikasi salah");
+            generateCaptcha();
+            resetButton(submitBtn, btnText, loadingIcon);
+            return;
+          }
+
+          const payload = {
+            apiKey: "AMTSILATI_2026_METAHATI",
+            nama: document.getElementById("nama").value.trim(),
+            kelas: document.getElementById("kelas").value,
+            nohp,
+            jenisIzin: document.getElementById("jenisIzin").value,
+            jamMakul: selectedJam.map((el) => el.value).join(", "),
+            alasan: document.getElementById("alasan").value.trim(),
+            status: "Menunggu Persetujuan",
+          };
+
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbzp5d3JxPVg0jq1UN6Y-Pc15kBte5_bUIL5oHpkevOLLTJAtWpDKGi0qQe1WKMuQnMV/exec";
+
+          const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const result = await response.json();
+
+          if (result.status === "success") {
+            form.reset();
+            generateCaptcha();
+            formSection.classList.add("hidden");
+            successSection.classList.remove("hidden");
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          } else {
+            showStatus(
+              "error",
+              "Gagal: " + (result.message || "Unknown error"),
+            );
+            generateCaptcha();
+          }
+        } catch (error) {
+          showStatus("error", "Terjadi kesalahan sistem: " + error.message);
+          generateCaptcha();
+        } finally {
+          resetButton(submitBtn, btnText, loadingIcon);
+        }
+      });
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
     <script>
       window.addEventListener("load", () => {
+        if (typeof anime !== "function") {
+          return;
+        }
+
         anime({
           targets: "#mainCard",
           opacity: [0, 1],
