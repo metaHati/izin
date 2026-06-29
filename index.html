@@ -314,6 +314,8 @@
 
     <script>
       const AUTO_REFRESH_INTERVAL = 15 * 60 * 1000;
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbzp5d3JxPVg0jq1UN6Y-Pc15kBte5_bUIL5oHpkevOLLTJAtWpDKGi0qQe1WKMuQnMV/exec";
       const documentRoot = document.documentElement;
       const form = document.getElementById("izinForm");
       const captchaQuestion = document.getElementById("captchaQuestion");
@@ -393,6 +395,42 @@
         submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
         btnText.textContent = "Kirim Permohonan Izin";
         loadingIcon.classList.add("hidden");
+      }
+
+      function getConnectionErrorMessage() {
+        if (window.location.protocol === "file:") {
+          return "Form dibuka dari file lokal. Jalankan lewat server lokal agar browser mengizinkan koneksi ke server izin.";
+        }
+
+        return "Tidak dapat terhubung ke server izin. Cek koneksi internet atau deployment Google Apps Script.";
+      }
+
+      async function postToScript(payload) {
+        let response;
+
+        try {
+          response = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(payload),
+          });
+        } catch (error) {
+          throw new Error(getConnectionErrorMessage());
+        }
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const responseText = await response.text();
+
+        try {
+          return JSON.parse(responseText);
+        } catch {
+          throw new Error("Respons server tidak valid.");
+        }
       }
 
       applySavedTheme();
@@ -493,22 +531,7 @@
             status: "Menunggu Persetujuan",
           };
 
-          const scriptURL =
-            "https://script.google.com/macros/s/AKfycbzp5d3JxPVg0jq1UN6Y-Pc15kBte5_bUIL5oHpkevOLLTJAtWpDKGi0qQe1WKMuQnMV/exec";
-
-          const response = await fetch(scriptURL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-          }
-
-          const result = await response.json();
+          const result = await postToScript(payload);
 
           if (result.status === "success") {
             form.reset();
